@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="add_form">
+    <h1>NoteJ</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li> 
+            <li> <a href="{% url 'add_note' %}">Add</a></li> 
+            <li> <a href="{% url 'logout' %}">Logout</a> </li>
+        </ul>
+    </nav>
+    <form class="note_form" method="post" action="">
+        {% csrf_token %}
+        {% render_field form.title id="title" placeholder="Title of the note"  %}
+
+        {% render_field form.note id="areatext" placeholder="Note" cols="30" rows="10"%}
+
+        <input id="btn3" type="submit" name="add_note" value="Add">
+    </form>
+</div>
+{% endblock %}

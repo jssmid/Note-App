@@ -1,0 +1,447 @@
+body{
+    background-color: rgb(34 108 137);
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+}
+li a , form p a{
+    text-decoration: none;
+    font-size: 25px;
+    color: lightblue;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover{
+    background-color: rgb(55, 166, 218);
+}  
+
+a:active{
+    color: rgb(94, 131, 143);
+}
+
+ul {
+    list-style: none;
+    
+}
+li {
+    text-decoration: none;
+    display: inline;
+    /* border-right: 1px solid #f2f8fa;     */
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr) ;
+    grid-template-areas:
+     "logo nav nav nav nav nav nav nav"
+     ". . section section section section . .";
+    grid-template-rows: 35px 1fr;
+    gap: 50px 0px; 
+}
+
+.wrapper h1 {
+    grid-area: logo;
+   background-color:#5e8fb1 ;
+}
+
+.wrapper nav {
+    grid-area: nav;
+    background-color: rgb(157 186 205 / 48%) ;
+}
+.wrapper section {
+    grid-area: section;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    gap: 50px 20px ;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    
+}  
+
+.note {
+    height: 200px;
+    max-width: 250px;
+    text-align: center;
+    background-color: rgb(42, 83, 80);
+    color: aliceblue;
+    border-radius: 5px;
+    word-break: break-word;
+    overflow: auto;
+    transition: all 500ms;
+    
+}
+div h2 {
+    text-align: center;
+    background-color: rgb(63, 148, 173);
+    border-top-left-radius : 5px;
+    border-top-right-radius: 5px;
+    
+} 
+
+div h3 {
+    padding: 25px;
+    
+}
+
+.note:hover{
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+/* ---------------------------------------------------------LOGIN PAGE----------------------------------------------------- */
+
+.main {
+    height: 100vh;
+    
+    display: grid;
+    background-color: rgb(34 108 137);
+    grid-template-columns: 1fr 400px 1fr ;
+    grid-template-areas:
+     ". . ."
+     ". login_form .";
+    grid-template-rows: 200px 1fr 1fr;
+    gap: 1px 1px;
+    
+}
+
+
+/*             FORM         */
+
+.login {
+    grid-area: login_form;
+    background-color: #5e8fb1;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 60px 50px 230px ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "loginp loginp loginp loginp"
+    ". iperson user ."
+    ". . . ."
+    ". ipass pass ."
+    ". . . ."
+    ". btn btn ."
+    "sign sign sign sign"
+    ". . . .";
+    transition: all 500ms;
+}
+.login:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+
+
+/*             FEILDS           */
+#user{
+    grid-area: user;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    box-shadow: none;
+    font-size: larger;
+}
+
+#user:focus, input[type=password]:focus, input[type=email]:focus {
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.377) !important; 
+}
+#pass{
+    grid-area: pass;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    font-size: larger;
+      
+
+}
+
+#btn {
+    grid-area: btn;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius:5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+    font-size: larger;
+}
+
+.loginpara{
+    grid-area: loginp;
+    font-size: xx-large;
+    text-align: center;
+    padding: 5px;
+}
+.signpara{
+    text-align: center;
+    padding: 10px;
+    grid-area: sign;
+}
+
+
+/*          ICONS            */
+
+#iperson {
+    grid-area: iperson;
+    background-color: darkcyan;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7.5px;
+}
+
+#ipass {
+    grid-area: ipass;
+    background-color: darkcyan;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7.5px;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+
+/*----------------------------------------------------------SIGN UP PAGE--------------------------------------------------------------------*/
+.sign-up {
+    grid-area: login_form;
+    background-color: #5e8fb1;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 60px 50px 230px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr;
+    grid-template-areas:
+    "signpara signpara signpara signpara"
+    ". iperson user ."
+    ". . . ."
+    ". iemail email ."
+    ". . . ."
+    ". ipass1 pass1 ."
+    ". . . ."
+    " . ipass2 pass2 ."
+    " . . . ."
+    ". btn2 btn2 ."
+    ". logpara logpara .";
+    transition: all 500ms;
+
+}
+.sign-up:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+/*             ICONS                 */
+#iemail{
+    grid-area: iemail;
+    background-color: darkcyan;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7.5px;
+}
+
+#ipass1{
+    grid-area: ipass1;
+    background-color: darkcyan;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7.5px;
+}
+
+#ipass2{
+    grid-area: ipass2;
+    background-color: darkcyan;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7.5px;
+}
+/*            FIELDS                  */
+#email{
+    grid-area: email;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    font-size: larger;
+}
+
+
+#pass1{
+    grid-area: pass1;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    font-size: larger;
+}
+
+#pass2{
+    grid-area: pass2;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    font-size: larger;
+}
+#btn2{
+    grid-area: btn2;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius:5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+    font-size: larger;
+}
+.logpara{
+    grid-area: logpara;
+    text-align: center;
+    padding: 10px;
+
+}
+.signup-para{
+    grid-area: signpara;
+    font-size: xx-large;
+    text-align: center;
+    padding: 5px;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------ADD PAGE---------------------------------------------------------------- */
+.add_form {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr) ;
+    grid-template-areas:
+    "logo nav nav nav nav nav nav nav"
+    ". . form form form form . .";
+    grid-template-rows: 35px 1fr;
+    gap: 50px 0px;
+    background-color: rgb(34 108 137);
+
+}
+.add_form h1 {
+    grid-area: logo;
+    background-color:#5e8fb1 ;
+ }
+ 
+.add_form nav {
+     grid-area: nav;
+     background-color: rgb(157 186 205 / 48%) ;
+ }
+
+.add_form form{
+    grid-area: form;
+    border-radius: 10px;
+    display: grid;
+    justify-items: center;
+
+}
+
+.note_form {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 50px  1fr ;
+    grid-template-areas: 
+    ". title . "
+    ". note ."
+    ". . ."
+    ". btn3 .";
+
+    gap: 20px;
+    
+}
+/* .note_form:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ } */ 
+
+
+
+ #title{
+    grid-area: title;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    font-size: larger;
+    transition: all 500ms;
+
+}
+#areatext{
+    grid-area: note;
+    padding: 12px 20px;
+    height: 225px;
+    max-width: 250px;
+    min-width: auto;
+    box-shadow: none;
+    outline: none;
+    font-size: larger;
+    resize: none;
+    transition: all 500ms;
+    
+}
+
+
+ #btn3{
+    grid-area: btn3;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius:5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+    font-size: larger;
+    width: 100px;
+    transition: all 500ms;
+ }
+
+ #title:hover, #areatext:hover, #btn3:hover{
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+ 
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+div form p a {
+    padding: 0;
+}
+
+.edit-btn {
+    width: auto;
+    height: 28px;
+    float: left;
+    padding: 5px;
+    background-color: rgb(63, 148, 173);
+    box-shadow: none;
+    border: 1px solid rgb(19, 136, 172);
+    cursor: pointer;
+
+}
+.delete-btn {
+    width: auto;
+    height: 28px;
+    float: right;
+    padding: 5px;
+    box-shadow: none;
+    background-color: rgb(63, 148, 173);
+    border: 1px solid rgb(19, 136, 172);
+    cursor: pointer;
+
+
+
+}    
+
+button:hover {
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.377) !important; 
+}

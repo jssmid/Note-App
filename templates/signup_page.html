@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="main">
+        <form  class="sign-up" method="post" action="">
+
+            {% csrf_token %}
+
+            <p class="signup-para"> Sign up </p>
+
+            <i id="iperson"class="material-icons" style="font-size:35px">person </i>
+            {% render_field form.username id="user" placeholder="Username" %}
+
+            <i id="iemail" class="material-icons" style="font-size:35px">email</i>
+            {% render_field form.email id="email" placeholder="Email" %}
+
+            <i id="ipass1" class="material-icons" style="font-size:35px">lock</i>
+            {% render_field form.password1 id="pass1" placeholder="Password" %}
+
+            <i id="ipass2" class="material-icons" style="font-size:35px">lock</i>
+            {% render_field form.password2 id="pass2" placeholder="Confirm Password" %}
+
+            <input id="btn2" type="submit" value="Sign up"> 
+
+            <p class="logpara">Do you have an account ?
+                <a href="{% url 'login' %}" style="font-size: 20px;">  Login</a> 
+            </p>
+        </form>
+    </div>
+
+{% endblock %}

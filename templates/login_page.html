@@ -1,0 +1,23 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+<div class="main">
+  <form class="login" method="post" action="">
+    {% csrf_token %}
+    <p class="loginpara">Login</p>
+
+    <i id="iperson" class="material-icons" style="font-size: 35px">person</i>
+    <input id="user" type="username" placeholder="Username" name="username" />
+    <br />
+
+    <i id="ipass" class="material-icons" style="font-size: 35px">lock</i>
+    <input id="pass" type="password" placeholder="Password" name="password"/><br />
+
+    <input id="btn" type="submit" value="Login" />
+
+    <p class="signpara">You do not have an account ?<a href="{% url 'sign_up' %}" style="font-size: 20px"> Sign up</a>
+    </p>
+  </form>
+</div>
+
+{% endblock %}

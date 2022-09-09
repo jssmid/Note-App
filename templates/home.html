@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+ {% block content %}
+ 
+<div class="wrapper">
+  <h1>NoteJ</h1>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'add_note' %}">Add</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+  </nav>
+  <section>
+    {% for note in notes %}
+    <div class="note">
+      <button class="edit-btn"><a style="text-decoration: none;color: black ; text-align: center;" href="{% url 'edit_note' note.id %}">Edit</a> </button>
+      <button class="delete-btn"><a style="text-decoration: none;  color: black ; text-align: center;" href="{% url 'delete_note' note.id %}">Delete</a></button>
+      <h2 class="note-title">{{ note.title }}</h2>
+      <h3>{{ note.note }}</h3>
+    </div>
+    {% endfor %}
+  </section>
+</div>
+
+{% endblock %}
