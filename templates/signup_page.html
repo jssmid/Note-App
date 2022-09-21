@@ -9,10 +9,10 @@
             <p class="signup-para"> Sign up </p>
 
             <i id="iperson"class="material-icons" style="font-size:35px">person </i>
-            {% render_field form.username id="user" placeholder="Username" %}
+            {% render_field form.username id="user" placeholder="Username"  autocomplete="off" %}
 
             <i id="iemail" class="material-icons" style="font-size:35px">email</i>
-            {% render_field form.email id="email" placeholder="Email" %}
+            {% render_field form.email id="email" placeholder="Email"  autocomplete="off"  %}
 
             <i id="ipass1" class="material-icons" style="font-size:35px">lock</i>
             {% render_field form.password1 id="pass1" placeholder="Password" %}

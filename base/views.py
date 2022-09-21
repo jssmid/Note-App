@@ -3,6 +3,7 @@ from .models import Note
 from django.contrib.auth import authenticate, login, logout 
 from django.contrib.auth.decorators import login_required
 from .forms import NoteForm , UserCreateForm
+from django.contrib import messages
 
 
 def home(request):
